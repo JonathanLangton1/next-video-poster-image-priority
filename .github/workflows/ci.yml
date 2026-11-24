@@ -23,14 +23,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.4
+      - run: bun install --frozen-lockfile
+      - run: bun run build
       - uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 3
-          command: npm test
-      - run: npm run coverage
+          command: bun run test
+      - run: bun run coverage
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         env:
