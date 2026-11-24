@@ -46,7 +46,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "watch": "bun run types:esm -- -w & bun run types:cjs -- -w & bun run build:esm -- --watch=forever & bun run build:cjs -- --watch=forever",
-    "types": "bun run types:esm & bun run types:cjs",
+    "types": "bun run types:esm && bun run types:cjs",
     "types:esm": "tsc --outDir dist",
     "types:cjs": "tsc --outDir dist/cjs",
     "prebuild": "bun run clean && bun run types",

@@ -2,9 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install and build the library at the repo root (`bun install && bun run build`), then install and run the development server here:
 
 ```bash
+bun install
 bun run dev
 ```
 
