@@ -674,7 +674,5 @@ If you want to develop on this thing locally, you can clone and link this sucker
 1. Clone this repo
 1. `cd` into the repo
 1. `bun install && bun run build`
-1. `cd ../` (or back to wherever you want to create a test app)
-1. `bunx create-next-app`
-1. `cd your-next-app`
-1. In the app's `package.json`, set `"next-video": "link:../next-video"` (or wherever you cloned this repo), then run `bun install`
+1. `cd examples/default-provider`, an app that already links the library with `"next-video": "link:../.."`
+1. `bun install && bun run dev`
